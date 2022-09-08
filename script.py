@@ -38,7 +38,7 @@ for x in range(3):
         ser.write(b'READ_VALUES\n')
         read = ser.readline()
         print(read)
-        lineTable = read.decode().split(',')
+        lineTable = read.decode().split('&')
         for fing in range(5):
             thisVal = float(lineTable[fing].rstrip())
             current = ((highLimit[fing] - thisVal) * actuationAngle[fing]/ (highLimit[fing]-lowLimit[fing]))
